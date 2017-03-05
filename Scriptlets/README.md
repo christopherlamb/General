@@ -7,6 +7,7 @@ Why not simply add it yourself?
 Scriplets may look a little intimidating to the non-coder and while they take a little setup, once done they are as simple to use as your browser's bookmarks.  In fact, that's exactly what they are!
 
 To set up a scriplet in your Chrome browser:
+
 1. Copy the entire scriplet to your clipboard
 2. Go to `Manage Bookmarks`
 3. Click the `Bookmarks bar` folder
