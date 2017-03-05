@@ -9,9 +9,10 @@ Scriplets may look a little intimidating to the non-coder and while they take a 
 To set up a scriplet in your Chrome browser:
 
 1. Copy the entire scriplet to your clipboard
-2. Go to `Manage Bookmarks`
-3. Click the `Bookmarks bar` folder
-4. Right click the page and click the `Add page` option
-5. In the title box enter the title, e.g. `YouTube Loop`
-6. Paste the scriplet copiedfrom step 1. into the url box
-7. When appropriate (usually on the page the scriplet is intended for) run the script by clicking on the new bookmark you just 
+2. Open the Chrome menu (while you are here, you may as well enable `Show bookmarks bar`)
+3. Go to `Bookmarks\Bookmark manager`
+4. Click the `Bookmarks bar` folder
+5. Right click the page in the `Organize` section and click the `Add page` option
+6. In the Name box enter the scriptlet name, e.g. `YouTube Loop`
+7. Paste the scriplet copied from step 1. into the URL box
+8. When appropriate (usually on the page the scriplet is intended for) run the script by clicking on the new bookmark you just 
