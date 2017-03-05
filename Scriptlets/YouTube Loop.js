@@ -1,3 +1,9 @@
+javascript:
+// *********************************
+// see setup instruction at 
+// https://github.com/AweSamNet/General/tree/master/Scriptlets
+// *********************************
+
 var playerElement = document.getElementById('player-api');
 var player = window.yt.player.getPlayerByElement(playerElement);
 var loopTime = 0;
