@@ -1,8 +1,18 @@
 javascript:
-// *********************************
-// see setup instruction at 
+/***************************************************************************
+// Author: Sam Lombardo, http://github.com/AweSamNet
+// 
+// Note: To set up this scriptlet, see setup instruction at 
 // https://github.com/AweSamNet/General/tree/master/Scriptlets
-// *********************************
+// 
+// Usage:
+// 1.   Load your favorite YouTube video
+// 2.   Run this scriptlet (if you created a bookmark for it, click it now)
+// 2.a. Notice the new Looping controls under the video
+// 3.   Move the video along to the spot you want to loop from
+// 4.   Click the "Loop at current time" button
+// 5.   Enjoy endlessly :)
+/**************************************************************************/
 
 var playerElement = document.getElementById('player-api');
 var player = window.yt.player.getPlayerByElement(playerElement);
