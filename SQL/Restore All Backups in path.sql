@@ -143,7 +143,7 @@ while @@fetch_status = 0
        insert #filelist exec ( @cmd )
 
        if @OneDBName is null 
-          select @dbName = left(@filename, patindex(@expression,@filename)-1)
+          select @dbName = left(@filename, patindex(@pattern,@filename)-1)
        else
 	   select @dbName = @OneDBName
 
