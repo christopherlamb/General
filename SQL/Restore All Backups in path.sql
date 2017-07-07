@@ -138,7 +138,7 @@ fetch BakFile_csr into @filename
 
 while @@fetch_status = 0
    begin
-       select @cmd = "RESTORE FILELISTONLY FROM disk = '" + @restoreFromDir + "\" + @filename + "'" 
+       select @cmd = 'RESTORE FILELISTONLY FROM disk = ''' + @restoreFromDir + '\' + @filename + '''' 
 
        insert #filelist exec ( @cmd )
 
@@ -147,8 +147,8 @@ while @@fetch_status = 0
        else
 	   select @dbName = @OneDBName
 
-       select @cmd = "RESTORE DATABASE " + @dbName + 
-		" FROM DISK = '" + @restoreFromDir + "\" + @filename + "' WITH " 
+       select @cmd = 'RESTORE DATABASE ' + @dbName + 
+		' FROM DISK = ''' + @restoreFromDir + '\' + @filename + ''' WITH ' 
 
        PRINT '' 
        PRINT 'RESTORING DATABASE ' + @dbName
@@ -172,12 +172,12 @@ while @@fetch_status = 0
        			select @restoreToDir = @restoreToDataDir
        
        		select @cmd = @cmd + 
-            		" MOVE '" + @LogicalName + "' TO '" + @restoreToDir + "\" + @PhysicalFileName + "', " 
+            		' MOVE ''' + @LogicalName + ''' TO ''' + @restoreToDir + '\' + @PhysicalFileName + ''', ' 
                  end
               else
                  begin  -- Match the file list, attempt to create any missing directory
                      select @restoreToDir = left(@PhysicalName,datalength(@PhysicalName) - patindex('%\%',reverse(@PhysicalName)) )
-                     select @cmd2 = "if not exist " +@restoreToDir+ " md " +@restoreToDir
+                     select @cmd2 = 'if not exist ' +@restoreToDir+ ' md ' +@restoreToDir
                      exec master..xp_cmdshell  @cmd2
                  end
 
@@ -205,5 +205,3 @@ drop table #dirList
 
 return
 GO
-
-
