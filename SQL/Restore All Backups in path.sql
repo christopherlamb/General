@@ -90,11 +90,11 @@ If @restoreToLogDir is null
 
 set nocount on
 
-declare @filename         varchar(40),
-	  @cmd              varchar(500), 
-	  @cmd2             varchar(500), 
+    declare @filename varchar(40),
+    @cmd              varchar(500), 
+    @cmd2             varchar(500), 
     @DataName         varchar (255),
-	  @LogName          varchar (255),
+    @LogName          varchar (255),
     @LogicalName      varchar(255), 
     @PhysicalName     varchar(255), 
     @Type             varchar(20), 
