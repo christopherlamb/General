@@ -2,13 +2,14 @@
 -- Original Post:     https://community.spiceworks.com/scripts/show/1512-restore-all-sql-databases-in-a-directory-to-instance-using-a-script
 -- Procedure Name:    sp_CSS_RestoreDir
 -- Purpose:           Restore one or many database backups from a single directory.  This script reads all 
---			database backups that are found in the @restoreFromDir parameter.
---			Any database backup that matches the form %_db_% will be restored to
---			the file locations specified in the RestoreTo... parameter(s).  The database
---			will be restored to a database name that is based on the database backup
---			file name.  For  example Insurance_db_200305212302.BAK will be restored to
---			a database named Insurance.  The characters preceeding the '_db_' text determines
---			the name.
+--                    database backups that are found in the @restoreFromDir parameter.
+--                    Any database backup that matches the pattern parameter will be restored to
+--                    the file locations specified in the RestoreTo... parameter(s).  The database
+--                    will be restored to a database name that is based on the database backup
+--                    file name.  For  example Insurance_db_200305212302.BAK will be restored to
+--                    a database named Insurance if the @pattern is the following: 
+--                        @pattern ='%_db_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].BAK'
+--                    The characters preceeding the @pattern text determines the name.
 --
 -- Input Parameters: @restoreFromDir - The directory where the database backups are located
 --			@restoreToDataDir - The directory where the data files (i.e. MDF) will be restored to
@@ -52,7 +53,7 @@
 --                        set  @OneDBName = null
 --
 --                    Sam Lombardo -- 07/06/2017
---                        Added parameter @pattern to filter files and also to extract db name from files. ** NOTE: line 143 
+--                        Added parameter @pattern to filter files and also to extract db name from files.
 --
 -- Sample Execution: exec sp_CSS_RestoreDir 'C:\sqldb\sql_backup', 'C:\sqldb\sql_data', 'C:\sqldb\sql_log' (if you use declare/set option then you don't have to use this command to restore) 
 --
