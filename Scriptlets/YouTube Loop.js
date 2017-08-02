@@ -63,7 +63,7 @@ function insertAfter(newNode, referenceNode) {
 
 function loop(){    
     var currentTime = player.getCurrentTime();
-    if(loopTime > 1 && loopTime < currentTime)
+    if(loopTime > 1 && loopTime <= currentTime)
     {
         player.seekTo(0);
         player.playVideo();   
