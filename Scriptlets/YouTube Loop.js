@@ -16,8 +16,7 @@ javascript:
 
 if(!document.getElementById('controlFrame')) 
 {
-    var playerElement = document.getElementById('player-api');
-    var player = window.yt.player.getPlayerByElement(playerElement);
+    var player = document.getElementById('movie_player');
     var loopTime = 0;
     var doLoop = false;
 
