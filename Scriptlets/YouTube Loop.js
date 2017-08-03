@@ -28,22 +28,24 @@ if(!document.getElementById('controlFrame'))
     controlFrame.style.height = "30px";
     controlFrame.style.marginBottom = "5px";
     controlFrame.style.width = "274px";
-    controlFrame.style.color ="wheat";
+    controlFrame.style.color ="#fff";
     controlFrame.style.padding = "5px";
 
 
     var loopAt = getSpan("No loop.");
     loopAt.style.width = "80px";
-    loopAt.style.border = "1px solid wheat";
+    loopAt.style.border = "1px solid #fff";
     loopAt.style.margin = "3px";
+	loopAt.style.color = "#737373"
+	loopAt.style.backgroundColor = "#fff"
     
 
 
     var setPosition = getSpanButton("Loop at current time");
     setPosition.style.width = "120px";
     setPosition.style.clear = "both";
-    setPosition.style.borderRadius = "8px";
-    setPosition.style.border = "2px solid white";
+    setPosition.style.borderRadius = "2px";
+    setPosition.style.border = "1px solid white";
     setPosition.onclick = function() {
         loopTime = player.getCurrentTime();
         loopAt.innerHTML = loopTime;
@@ -86,8 +88,8 @@ function getSpan(innerHTML){
     control.style.zIndex = 1000;
     control.style.display = "inline-block";
     control.style.padding = "2px";
-    control.style.borderRadius = "8px";
-    control.style.border = "2px solid white";
+    control.style.borderRadius = "2px";
+    control.style.border = "1px solid white";
     control.style.height = "15px";
     control.innerHTML = innerHTML;
     
