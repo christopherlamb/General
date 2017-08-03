@@ -22,19 +22,28 @@ if(!document.getElementById('controlFrame'))
 
     var controlFrame = document.createElement("span");
     controlFrame.id = "controlFrame";
-    controlFrame.style.border = "1px solid #000000";
-    controlFrame.style.padding = "5px";
+    controlFrame.style.border = "1px solid white";
+    controlFrame.style.backgroundColor = "#F70926  ";
+    controlFrame.style.display= "block";
     controlFrame.style.height = "30px";
-    controlFrame.style.margin = "5px";
+    controlFrame.style.marginBottom = "5px";
+    controlFrame.style.width = "274px";
+    controlFrame.style.color ="wheat";
+    controlFrame.style.padding = "5px";
+
 
     var loopAt = getSpan("No loop.");
     loopAt.style.width = "80px";
-    loopAt.style.border = "1px solid #000000";
+    loopAt.style.border = "1px solid wheat";
+    loopAt.style.margin = "3px";
+    
 
 
     var setPosition = getSpanButton("Loop at current time");
     setPosition.style.width = "120px";
     setPosition.style.clear = "both";
+    setPosition.style.borderRadius = "8px";
+    setPosition.style.border = "2px solid white";
     setPosition.onclick = function() {
         loopTime = player.getCurrentTime();
         loopAt.innerHTML = loopTime;
@@ -77,9 +86,11 @@ function getSpan(innerHTML){
     control.style.zIndex = 1000;
     control.style.display = "inline-block";
     control.style.padding = "2px";
-    control.style.margin = "0px 0px 0px 2px";
+    control.style.borderRadius = "8px";
+    control.style.border = "2px solid white";
     control.style.height = "15px";
     control.innerHTML = innerHTML;
+    
     
     return control;
 }
@@ -87,7 +98,6 @@ function getSpan(innerHTML){
 function getSpanButton(innerHTML){
     var control = getSpan(innerHTML);
     control.style.cursor = "pointer";
-    control.style.textDecoration = "underline";
-   
+    
     return control;
 }
