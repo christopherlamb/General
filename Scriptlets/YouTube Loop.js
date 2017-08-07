@@ -36,8 +36,8 @@ if(!document.getElementById('controlFrame'))
     loopAt.style.width = "80px";
     loopAt.style.border = "1px solid #fff";
     loopAt.style.margin = "3px";
-	loopAt.style.color = "#737373"
-	loopAt.style.backgroundColor = "#fff"
+    loopAt.style.color = "#737373"
+    loopAt.style.backgroundColor = "#fff"
     
 
 
