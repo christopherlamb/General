@@ -61,7 +61,7 @@ if(!document.getElementById('controlFrame'))
         loopAt.innerHTML = "No loop.";
     };
 
-    var afterThisGuy = document.getElementById('player-messages');
+    var afterThisGuy = document.getElementById('content-separator');
     insertAfter(controlFrame, afterThisGuy.firstChild);
     controlFrame.appendChild(setPosition);
     controlFrame.appendChild(loopAt);
