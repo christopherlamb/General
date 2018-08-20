@@ -54,6 +54,9 @@
 --
 --                    Sam Lombardo -- 07/06/2017
 --                        Added parameter @pattern to filter files and also to extract db name from files.
+--                    Chris Lamb -- 08/20/2018
+--                        Simplified for use with custom backup location
+--					  	
 --
 -- Sample Execution: exec sp_CSS_RestoreDir 'C:\sqldb\sql_backup', 'C:\sqldb\sql_data', 'C:\sqldb\sql_log' (if you use declare/set option then you don't have to use this command to restore) 
 --
@@ -63,27 +66,18 @@
 -- 
 /***************************************************************************************/
 
-CREATE proc [dbo].[sp_CSS_RestoreDir]
-    @restoreFromDir varchar(255),
-    @restoreToDataDir varchar(255)= null,
-    @restoreToLogDir varchar(255) = null,
-    @MatchFileList char(1) = 'N',
-    @OneDBName varchar(255) = null,
-    @pattern varchar(255) = '%.bak'
-as
+declare @restoreFromDir varchar(255),	
+    @restoreToDataDir varchar(255),
+    @restoreToLogDir varchar(255) ,
+    @MatchFileList char(1) ,
+    @OneDBName varchar(255), 
+	@pattern varchar(255) = '%.bak'
 
--- to use delare/set option, use the following code and commond -- the create proc SP_CSS_RestoreDir 
---		declare     @restoreFromDir varchar(255),	
---    				@restoreToDataDir varchar(255),
---					@restoreToLogDir varchar(255) ,
---    				@MatchFileList char(1) ,
---    				@OneDBName varchar(255) 
---
---					set  @restoreFromDir = 'M:\WEBQA2008R2'
---					set  @restoreToDataDir = 'J:\MSSQL10_50.WEBQASQL2008R2\MSSQL\DATA'
---					set  @restoreToLogDir = 'J:\MSSQL10_50.WEBQASQL2008R2\MSSQL\Log'
---					set  @MatchFileList = 'N'
---					set  @OneDBName = null
+set  @restoreFromDir = 'location of directory where your backup exist'
+set  @restoreToDataDir = 'location where your data files will be restored too'
+set  @restoreToLogDir = 'location of LDF files needs to be restored too'
+set  @MatchFileList = 'N'
+set  @OneDBName = null
 
 --If a directory for the Log file is not supplied then use the data directory
 If @restoreToLogDir is null
